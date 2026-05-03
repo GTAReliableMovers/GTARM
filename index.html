@@ -200,7 +200,7 @@
     <p class="hero-desc">Serving Toronto, Mississauga, Brampton, Markham, and all across the GTA. Reliable, professional, and on time — every move.</p>
     <div class="hero-btns">
       <a href="#quote-form" class="btn-primary">Get a Free Quote</a>
-      <a href="tel:+647-705-5853" class="btn-outline">Call Us Now</a>
+      <a href="tel:+1647705-5853" class="btn-outline">Call Us Now</a>
     </div>
   </div>
   <div class="hero-card" id="quote-form">
@@ -209,14 +209,18 @@
     <input class="quote-field" placeholder="Drop-off address" type="text" id="dropoff" />
     <div class="quote-row">
       <input class="quote-field" placeholder="Move date" type="date" id="movedate" />
-      <select class="quote-field" id="homesize" style="cursor:pointer">
-        <option value="" disabled selected>Home size</option>
-        <option>Studio / 1BR</option>
-        <option>2 Bedrooms</option>
-        <option>3 Bedrooms</option>
-        <option>4+ Bedrooms</option>
-        <option>Office / Commercial</option>
+      <select class="quote-field" id="homesize" style="cursor:pointer;color:#fff;background:#1a3a5c;">
+        <option value="" disabled selected style="background:#1a3a5c;color:#fff;">Home size</option>
+        <option style="background:#1a3a5c;color:#fff;">Studio / 1BR</option>
+        <option style="background:#1a3a5c;color:#fff;">2 Bedrooms</option>
+        <option style="background:#1a3a5c;color:#fff;">3 Bedrooms</option>
+        <option style="background:#1a3a5c;color:#fff;">4+ Bedrooms</option>
+        <option style="background:#1a3a5c;color:#fff;">Office / Commercial</option>
       </select>
+    </div>
+    <div class="quote-row">
+      <input class="quote-field" placeholder="Phone number" type="tel" id="phone" />
+      <input class="quote-field" placeholder="Email address" type="email" id="email" />
     </div>
     <button class="btn-primary" style="width:100%;margin-top:6px" onclick="submitQuote()">Get My Free Quote →</button>
   </div>
@@ -320,7 +324,7 @@
 <section class="cta-section" id="contact">
   <h2>Ready to Move?</h2>
   <p>Get a free, no-obligation quote in under a minute.</p>
-  <div class="cta-phone"><a href="tel:+16477055853">(647) 705-5853</a></div>
+  <div class="cta-phone"><a href="tel:+1647-705-5853">(647)705-5853</a></div>
   <button class="btn-white" onclick="document.getElementById('quote-form').scrollIntoView({behavior:'smooth'})">Get My Free Quote →</button>
 </section>
 
@@ -345,10 +349,13 @@
     const dropoff = document.getElementById('dropoff').value.trim();
     const date = document.getElementById('movedate').value;
     const size = document.getElementById('homesize').value;
-    if (!pickup || !dropoff || !date || !size) {
-      alert('Please fill in all fields to get your quote.');
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if (!pickup || !dropoff || !date || !size || (!phone && !email)) {
+      alert('Please fill in all fields and provide a phone number or email.');
       return;
     }
+
     const btn = document.querySelector('#quote-form .btn-primary');
     btn.textContent = 'Sending...';
     btn.disabled = true;
@@ -369,13 +376,15 @@
         document.getElementById('dropoff').value = '';
         document.getElementById('movedate').value = '';
         document.getElementById('homesize').value = '';
+        document.getElementById('phone').value = '';
+        document.getElementById('email').value = '';
       } else {
         throw new Error();
       }
     } catch {
       btn.textContent = 'Get My Free Quote →';
       btn.disabled = false;
-      alert('Something went wrong. Please call us directly at (647)705-5853.');
+      alert('Something went wrong. Please call us directly at (647) 705-5853.');
     }
   }
 </script>
