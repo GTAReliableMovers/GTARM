@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GTA Reliable Movers – Professional Moving Services in the GTA</title>
+  <meta name="description" content="Trusted, licensed, and insured movers serving Toronto, Mississauga, Brampton, Markham and all across the GTA. Get a free quote today." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: #1a1a1a; background: #fff; }
+
+    /* NAV */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1rem 2.5rem; border-bottom: 1px solid #eee;
+      position: sticky; top: 0; background: #fff; z-index: 100;
+    }
+    .logo { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px; color: #1a1a1a; text-decoration: none; }
+    .logo span { color: #E24B4A; }
+    .nav-links { display: flex; gap: 1.5rem; }
+    .nav-links a { text-decoration: none; font-size: 14px; color: #555; transition: color 0.2s; }
+    .nav-links a:hover { color: #1a1a1a; }
+    .nav-cta {
+      background: #E24B4A; color: #fff; border: none;
+      padding: 9px 20px; border-radius: 6px; font-size: 14px;
+      font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: #c73c3c; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: #1a1a1a; margin: 5px 0; border-radius: 2px; }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 1rem;
+      padding: 1.5rem 2.5rem; background: #fff; border-bottom: 1px solid #eee;
+    }
+    .mobile-menu a { text-decoration: none; font-size: 15px; color: #555; }
+    .mobile-menu .nav-cta { width: fit-content; }
+
+    /* HERO */
+    .hero {
+      background: #0C447C; color: #fff;
+      padding: 5rem 2.5rem; display: grid;
+      grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+    }
+    .hero-label { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #85B7EB; margin-bottom: 1rem; }
+    .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: 68px; line-height: 1; color: #fff; margin-bottom: 1.5rem; }
+    .hero h1 span { color: #E24B4A; }
+    .hero-desc { font-size: 16px; color: #B5D4F4; line-height: 1.7; margin-bottom: 2rem; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      background: #E24B4A; color: #fff; border: none;
+      padding: 14px 28px; border-radius: 6px; font-size: 15px;
+      font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: background 0.2s; text-decoration: none; display: inline-block;
+    }
+    .btn-primary:hover { background: #c73c3c; }
+    .btn-outline {
+      background: transparent; color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      padding: 14px 28px; border-radius: 6px; font-size: 15px;
+      font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.2s; text-decoration: none; display: inline-block;
+    }
+    .btn-outline:hover { border-color: #fff; }
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px; padding: 1.75rem;
+    }
+    .hero-card h3 { font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 1.25rem; }
+    .quote-field {
+      width: 100%; background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2); border-radius: 6px;
+      padding: 11px 14px; color: #fff; font-size: 14px;
+      font-family: 'DM Sans', sans-serif; margin-bottom: 10px;
+    }
+    .quote-field::placeholder { color: rgba(255,255,255,0.5); }
+    .quote-field:focus { outline: none; border-color: rgba(255,255,255,0.5); }
+    .quote-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    /* TRUST BAR */
+    .trust-bar {
+      display: flex; gap: 2rem; padding: 1.25rem 2.5rem;
+      background: #f7f7f7; border-bottom: 1px solid #eee;
+      overflow-x: auto; flex-wrap: wrap;
+    }
+    .trust-item { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #555; white-space: nowrap; }
+    .trust-dot { width: 8px; height: 8px; border-radius: 50%; background: #E24B4A; flex-shrink: 0; }
+
+    /* SECTIONS */
+    .section { padding: 5rem 2.5rem; }
+    .section-alt { background: #f7f7f7; }
+    .section-label { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: #E24B4A; margin-bottom: 0.75rem; }
+    .section h2 { font-family: 'Bebas Neue', sans-serif; font-size: 44px; color: #1a1a1a; margin-bottom: 1rem; line-height: 1.1; }
+    .section-intro { color: #666; font-size: 15px; line-height: 1.7; max-width: 520px; margin-bottom: 0; }
+
+    /* SERVICES */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 2.5rem; }
+    .svc-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 1.5rem; transition: box-shadow 0.2s; }
+    .svc-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .svc-icon { width: 42px; height: 42px; border-radius: 8px; background: #E6F1FB; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+    .svc-icon svg { width: 20px; height: 20px; stroke: #185FA5; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .svc-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; color: #1a1a1a; }
+    .svc-card p { font-size: 13px; color: #777; line-height: 1.6; }
+
+    /* STEPS */
+    .steps-section { background: #0C447C; padding: 5rem 2.5rem; }
+    .steps-section .section-label { color: #85B7EB; }
+    .steps-section h2 { color: #fff; }
+    .steps-section .section-intro { color: #B5D4F4; }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 2.5rem; }
+    .step-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 1.75rem; }
+    .step-num { font-family: 'Bebas Neue', sans-serif; font-size: 40px; color: #E24B4A; line-height: 1; margin-bottom: 0.75rem; }
+    .step-card h4 { font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .step-card p { font-size: 13px; color: #85B7EB; line-height: 1.6; }
+
+    /* REVIEWS */
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 2.5rem; }
+    .review-card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 1.5rem; }
+    .stars { color: #EF9F27; font-size: 15px; margin-bottom: 0.75rem; letter-spacing: 2px; }
+    .review-card p { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 1rem; }
+    .reviewer { font-size: 13px; font-weight: 600; color: #1a1a1a; }
+    .reviewer span { color: #888; font-weight: 400; }
+
+    /* CTA */
+    .cta-section { background: #E24B4A; padding: 5rem 2.5rem; text-align: center; }
+    .cta-section h2 { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: #fff; margin-bottom: 0.75rem; }
+    .cta-section p { color: rgba(255,255,255,0.85); font-size: 16px; margin-bottom: 1.5rem; }
+    .cta-phone { font-family: 'Bebas Neue', sans-serif; font-size: 42px; color: #fff; letter-spacing: 2px; margin-bottom: 2rem; }
+    .cta-phone a { color: #fff; text-decoration: none; }
+    .btn-white {
+      background: #fff; color: #E24B4A; border: none;
+      padding: 15px 36px; border-radius: 6px; font-size: 15px;
+      font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif;
+      transition: opacity 0.2s;
+    }
+    .btn-white:hover { opacity: 0.9; }
+
+    /* FOOTER */
+    footer {
+      padding: 2rem 2.5rem; border-top: 1px solid #eee;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: #1a1a1a; }
+    .footer-logo span { color: #E24B4A; }
+    footer p { font-size: 13px; color: #888; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 13px; color: #888; text-decoration: none; }
+    .footer-links a:hover { color: #1a1a1a; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: block; }
+      .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; }
+      .hero h1 { font-size: 52px; }
+      .quote-row { grid-template-columns: 1fr; }
+      .section { padding: 3.5rem 1.5rem; }
+      .steps-section { padding: 3.5rem 1.5rem; }
+      .cta-section { padding: 3.5rem 1.5rem; }
+      nav { padding: 1rem 1.5rem; }
+      .trust-bar { padding: 1rem 1.5rem; }
+      footer { padding: 1.5rem; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">GTA <span>Reliable</span> Movers</a>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('quote-form').scrollIntoView({behavior:'smooth'})">Get a Free Quote</button>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#services" onclick="toggleMenu()">Services</a>
+  <a href="#how-it-works" onclick="toggleMenu()">How It Works</a>
+  <a href="#reviews" onclick="toggleMenu()">Reviews</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <button class="nav-cta" onclick="document.getElementById('quote-form').scrollIntoView({behavior:'smooth'});toggleMenu()">Get a Free Quote</button>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-label">Trusted GTA Movers</div>
+    <h1>Moving<br>Done <span>Right.</span></h1>
+    <p class="hero-desc">Serving Toronto, Mississauga, Brampton, Markham, and all across the GTA. Reliable, professional, and on time — every move.</p>
+    <div class="hero-btns">
+      <a href="#quote-form" class="btn-primary">Get a Free Quote</a>
+      <a href="tel:+14160000000" class="btn-outline">Call Us Now</a>
+    </div>
+  </div>
+  <div class="hero-card" id="quote-form">
+    <h3>Get your free quote in 60 seconds</h3>
+    <input class="quote-field" placeholder="Pickup address" type="text" id="pickup" />
+    <input class="quote-field" placeholder="Drop-off address" type="text" id="dropoff" />
+    <div class="quote-row">
+      <input class="quote-field" placeholder="Move date" type="date" id="movedate" />
+      <select class="quote-field" id="homesize" style="cursor:pointer">
+        <option value="" disabled selected>Home size</option>
+        <option>Studio / 1BR</option>
+        <option>2 Bedrooms</option>
+        <option>3 Bedrooms</option>
+        <option>4+ Bedrooms</option>
+        <option>Office / Commercial</option>
+      </select>
+    </div>
+    <button class="btn-primary" style="width:100%;margin-top:6px" onclick="submitQuote()">Get My Free Quote →</button>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-dot"></div>Licensed &amp; Insured in Ontario</div>
+  <div class="trust-item"><div class="trust-dot"></div>500+ Moves Completed</div>
+  <div class="trust-item"><div class="trust-dot"></div>5-Star Rated on Google</div>
+  <div class="trust-item"><div class="trust-dot"></div>No Hidden Fees</div>
+  <div class="trust-item"><div class="trust-dot"></div>Same-Day Availability</div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="section-label">What We Do</div>
+  <h2>Full-Service Moving,<br>Your Way</h2>
+  <p class="section-intro">Whether you're moving a studio or a 5-bedroom house, we have the team and the truck to handle it.</p>
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <h4>Local Moves</h4>
+      <p>Fast, careful moves anywhere in the GTA. Transparent hourly rates with no surprise charges.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </div>
+      <h4>Residential Moving</h4>
+      <p>Apartments, condos, houses — we handle everything from packing to final placement.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+      </div>
+      <h4>Office Moving</h4>
+      <p>Minimal downtime, maximum efficiency. We move your business so you can stay in business.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+      </div>
+      <h4>Packing Services</h4>
+      <p>Full or partial packing available. We bring the supplies and the care for your belongings.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps-section" id="how-it-works">
+  <div class="section-label">How It Works</div>
+  <h2>3 Steps to a Stress-Free Move</h2>
+  <p class="section-intro">We've simplified the process so you can focus on settling in, not stressing out.</p>
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <h4>Get a Free Quote</h4>
+      <p>Fill out our quick form or give us a call. We'll give you a transparent, flat-rate estimate — no obligations.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <h4>Book Your Date</h4>
+      <p>Choose a date that works for you. We're available 7 days a week, including last-minute and same-day moves.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <h4>We Handle the Rest</h4>
+      <p>Our crew shows up on time, moves your stuff safely, and won't leave until you're completely satisfied.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section section-alt" id="reviews">
+  <div class="section-label">Reviews</div>
+  <h2>What Our Customers Say</h2>
+  <p class="section-intro">Real moves, real people, real results across the GTA.</p>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Showed up on time, wrapped everything carefully, and had us moved in within 4 hours. Absolutely will use again."</p>
+      <div class="reviewer">Jason M. <span>· Mississauga</span></div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Most professional movers I've ever hired. No hidden fees, no damage — just a smooth move from Scarborough to Brampton."</p>
+      <div class="reviewer">Priya S. <span>· Scarborough</span></div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Called them last minute on a Saturday and they made it work. Saved us big time. Great guys, great price."</p>
+      <div class="reviewer">Marcus T. <span>· North York</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <h2>Ready to Move?</h2>
+  <p>Get a free, no-obligation quote in under a minute.</p>
+  <div class="cta-phone"><a href="tel:+14160000000">(416) 000-0000</a></div>
+  <button class="btn-white" onclick="document.getElementById('quote-form').scrollIntoView({behavior:'smooth'})">Get My Free Quote →</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">GTA <span>Reliable</span> Movers</div>
+  <p>© 2025 GTA Reliable Movers · Aurora, Ontario · All rights reserved</p>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const m = document.getElementById('mobile-menu');
+    m.style.display = m.style.display === 'flex' ? 'none' : 'flex';
+  }
+  async function submitQuote() {
+    const pickup = document.getElementById('pickup').value.trim();
+    const dropoff = document.getElementById('dropoff').value.trim();
+    const date = document.getElementById('movedate').value;
+    const size = document.getElementById('homesize').value;
+    if (!pickup || !dropoff || !date || !size) {
+      alert('Please fill in all fields to get your quote.');
+      return;
+    }
+    const btn = document.querySelector('#quote-form .btn-primary');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          subject: 'New Quote Request – GTA Reliable Movers',
+          pickup, dropoff,
+          move_date: date,
+          home_size: size
+        })
+      });
+      if (res.ok) {
+        btn.textContent = 'Quote Sent!';
+        document.getElementById('pickup').value = '';
+        document.getElementById('dropoff').value = '';
+        document.getElementById('movedate').value = '';
+        document.getElementById('homesize').value = '';
+      } else {
+        throw new Error();
+      }
+    } catch {
+      btn.textContent = 'Get My Free Quote →';
+      btn.disabled = false;
+      alert('Something went wrong. Please call us directly at (416) 000-0000.');
+    }
+  }
+</script>
+</body>
+</html>
